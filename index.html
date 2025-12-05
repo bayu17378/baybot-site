@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Datang di Bot Trading</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f5f6fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+      color: #2f3640;
+    }
+    header {
+      background: #4cd137;
+      width: 100%;
+      padding: 20px 0;
+      color: white;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+    main {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #44bd32;
+    }
+    p {
+      margin: 15px 0;
+      line-height: 1.6;
+    }
+    .warning {
+      background: #e84118;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .info {
+      background: #fbc531;
+      color: #2f3640;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background: #273c75;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .buttons a:hover {
+      background: #192a56;
+    }
+    canvas {
+      margin-top: 25px;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Selamat Datang di Bot Trading Otomatis</header>
+
+  <main>
+    <h1>Bot Trading Spot & Future</h1>
+    <p>
+      Bot ini membantu kamu menemukan <strong>sinyal bullish</strong> dan melakukan trading otomatis 
+      pada market <strong>spot</strong> maupun <strong>future</strong>. Semua keputusan trading 
+      dilakukan berdasarkan algoritma, sehingga mengurangi risiko emosi.
+    </p>
+
+    <div class="warning">
+      Penting: Gunakan <strong>API Key</strong> tanpa akses <strong>withdraw</strong>. 
+      Jangan pernah memberikan kunci API yang bisa menarik dana.
+    </div>
+
+    <div class="info">
+      ⚠️ Trading memiliki risiko kerugian. Gunakan <strong>SL/TP</strong> atau <strong>Trailing Stop</strong> untuk membatasi kerugian dan mengamankan profit.
+    </div>
+
+    <canvas id="tradingChart" height="200"></canvas>
+
+    <div class="buttons">
+      <a href="/signup.html">Sign Up</a>
+      <a href="/login.html">Login</a>
+      <a href="/learn.html">Pelajari Cara Kerja Bot</a>
+    </div>
+  </main>
+
+  <script>
+    const ctx = document.getElementById('tradingChart').getContext('2d');
+    const tradingChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: Array.from({length: 20}, (_, i) => i+1),
+        datasets: [{
+          label: 'Harga Asset',
+          data: Array.from({length: 20}, () => Math.floor(Math.random()*100 + 50)),
+          borderColor: '#44bd32',
+          backgroundColor: 'rgba(68, 189, 50, 0.2)',
+          tension: 0.4,
+          fill: true,
+          pointRadius: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: { enabled: true }
+        },
+        scales: {
+          x: { display: true, title: { display: true, text: 'Waktu' } },
+          y: { display: true, title: { display: true, text: 'Harga' } }
+        }
+      }
+    });
+
+    // Animasi update chart setiap 2 detik
+    setInterval(() => {
+      tradingChart.data.datasets[0].data.push(Math.floor(Math.random()*100 + 50));
+      tradingChart.data.datasets[0].data.shift();
+      tradingChart.update();
+    }, 2000);
+  </script>
+
+</body>
+</html>
