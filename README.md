@@ -1,1 +1,1 @@
-# baybot-site
+baybot.my.id
