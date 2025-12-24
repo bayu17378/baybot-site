@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading Bot System Explanation | Portfolio</title>
+
+<style>
+body {
+    background:#f5f7fa;
+    color:#2f3640;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    margin:0;
+    padding:0;
+}
+
+header {
+    background:linear-gradient(135deg,#273c75,#192a56);
+    color:#fff;
+    padding:40px 20px;
+    text-align:center;
+}
+
+header h1 {
+    margin:0;
+    font-size:2rem;
+}
+
+header p {
+    margin-top:10px;
+    opacity:0.9;
+}
+
+main {
+    max-width:800px;
+    margin:-40px auto 40px;
+    background:#fff;
+    border-radius:14px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+h2 {
+    color:#273c75;
+    margin-top:30px;
+}
+
+p {
+    line-height:1.7;
+    margin:15px 0;
+}
+
+ul {
+    margin:10px 0 20px 20px;
+}
+
+li {
+    margin-bottom:8px;
+}
+
+.box {
+    background:#f1f2f6;
+    border-left:4px solid #273c75;
+    padding:15px;
+    margin:20px 0;
+    font-size:0.95rem;
+}
+
+.badges span {
+    display:inline-block;
+    background:#e1e9ff;
+    color:#273c75;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:0.8rem;
+    margin-right:8px;
+    margin-bottom:8px;
+}
+
+.buttons {
+    text-align:center;
+    margin-top:30px;
+}
+
+.buttons a {
+    display:inline-block;
+    margin:8px;
+    padding:12px 22px;
+    background:#273c75;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.buttons a:hover {
+    background:#192a56;
+}
+
+footer {
+    text-align:center;
+    font-size:0.85rem;
+    color:#888;
+    margin-bottom:30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Trading Bot System Explanation</h1>
+  <p>How the automated trading system is designed</p>
+</header>
+
+<main>
+
+<h2>Purpose of This Project</h2>
+<p>
+Halaman ini menjelaskan <strong>konsep dan arsitektur sistem</strong> dari
+automated trading bot yang ditampilkan dalam portfolio ini.
+Project ini dibuat untuk menunjukkan <strong>cara berpikir sistem</strong>,
+bukan untuk mempromosikan profit atau performa trading.
+</p>
+
+<div class="box">
+⚠️ Semua data dan tampilan pada dashboard adalah <strong>simulasi</strong>.
+Trading logic dan backend tidak dipublikasikan demi keamanan.
+</div>
+
+<h2>High-Level Architecture</h2>
+<p>
+Sistem trading bot ini dirancang dengan pemisahan tanggung jawab yang jelas:
+</p>
+
+<ul>
+  <li><strong>Frontend Dashboard</strong> – Menampilkan status bot dan posisi</li>
+  <li><strong>Backend API</strong> – Mengelola state, validasi, dan data bot</li>
+  <li><strong>Trading Engine</strong> – Mengeksekusi strategi dan order</li>
+</ul>
+
+<h2>Trading Logic Overview</h2>
+<p>
+Bot bekerja menggunakan pendekatan <strong>rule-based system</strong>:
+</p>
+
+<ul>
+  <li>Identifikasi kondisi market (trend / momentum)</li>
+  <li>Validasi risk sebelum entry</li>
+  <li>Eksekusi posisi tanpa intervensi manual</li>
+  <li>Monitoring posisi secara real-time</li>
+</ul>
+
+<h2>Risk Management Design</h2>
+<p>
+Manajemen risiko menjadi fokus utama dalam sistem ini:
+</p>
+
+<ul>
+  <li>Fixed Stop Loss untuk membatasi downside</li>
+  <li>Trailing Stop untuk mengamankan profit</li>
+  <li>Single position control (tidak overtrade)</li>
+  <li>No revenge trading (state-based execution)</li>
+</ul>
+
+<h2>State Tracking</h2>
+<p>
+Bot menyimpan state internal untuk memastikan konsistensi sistem:
+</p>
+
+<ul>
+  <li>Status bot (active / inactive)</li>
+  <li>Status posisi (in position / flat)</li>
+  <li>Entry price & trailing level</li>
+  <li>Akumulasi profit dan loss</li>
+</ul>
+
+<h2>Technology Stack</h2>
+<div class="badges">
+  <span>HTML</span>
+  <span>CSS</span>
+  <span>JavaScript</span>
+  <span>Node.js (Backend)</span>
+  <span>REST API</span>
+  <span>Crypto Exchange API</span>
+</div>
+
+<h2>Design Philosophy</h2>
+<p>
+Beberapa prinsip utama dalam desain sistem:
+</p>
+
+<ul>
+  <li>Automation over emotion</li>
+  <li>Clarity over complexity</li>
+  <li>Risk-first approach</li>
+  <li>Separation of concerns</li>
+</ul>
+
+<div class="buttons">
+  <a href="index.html">Back to Home</a>
+  <a href="starbot.html">View Dashboard Demo</a>
+</div>
+
+</main>
+
+<footer>
+© 2025 Bayu — Portfolio System Explanation
+</footer>
+
+</body>
+</html>
