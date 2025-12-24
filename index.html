@@ -3,148 +3,195 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Selamat Datang di Bot Trading</title>
+  <title>Bayu | Trading Bot Portfolio</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background: #f5f6fa;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f7fa;
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      text-align: center;
       color: #2f3640;
     }
+
     header {
-      background: #4cd137;
-      width: 100%;
-      padding: 20px 0;
-      color: white;
-      font-size: 1.8em;
-      font-weight: bold;
+      background: linear-gradient(135deg, #273c75, #192a56);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
     }
-    main {
-      max-width: 700px;
-      margin: 30px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
     }
-    h1 {
-      color: #44bd32;
-    }
-    p {
-      margin: 15px 0;
-      line-height: 1.6;
-    }
-    .warning {
-      background: #e84118;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-    .info {
-      background: #fbc531;
-      color: #2f3640;
-      padding: 10px;
-      border-radius: 5px;
-      font-weight: bold;
+
+    header p {
       margin-top: 10px;
+      font-size: 1rem;
+      opacity: 0.9;
     }
+
+    main {
+      max-width: 760px;
+      margin: -40px auto 40px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #273c75;
+    }
+
+    p {
+      line-height: 1.7;
+      margin: 15px 0;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e1e9ff;
+      color: #273c75;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .note {
+      background: #f1f2f6;
+      border-left: 4px solid #273c75;
+      padding: 12px 15px;
+      margin: 20px 0;
+      font-size: 0.9rem;
+    }
+
     .buttons {
-      margin-top: 20px;
+      margin-top: 30px;
+      text-align: center;
     }
+
     .buttons a {
       display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
+      margin: 8px;
+      padding: 12px 22px;
       background: #273c75;
-      color: white;
+      color: #fff;
       text-decoration: none;
       border-radius: 8px;
+      font-weight: 600;
       transition: background 0.3s;
     }
+
     .buttons a:hover {
       background: #192a56;
     }
+
     canvas {
-      margin-top: 25px;
+      margin-top: 30px;
       max-width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 30px;
     }
   </style>
 </head>
 <body>
 
-  <header>Selamat Datang di Bot Trading Otomatis</header>
+<header>
+  <h1>Trading Bot Dashboard</h1>
+  <p>Portfolio Project — Automated Trading System Concept</p>
+</header>
 
-  <main>
-    <h1>Bot Trading Spot & Future</h1>
-    <p>
-      Bot ini membantu kamu menemukan <strong>sinyal bullish</strong> dan melakukan trading otomatis 
-      pada market <strong>spot</strong> maupun <strong>future</strong>. Semua keputusan trading 
-      dilakukan berdasarkan algoritma, sehingga mengurangi risiko emosi.
-    </p>
+<main>
+  <h2>Project Overview</h2>
+  <p>
+    Ini adalah <strong>portfolio frontend</strong> yang menampilkan konsep dashboard
+    untuk memonitor <strong>automated crypto trading bot</strong>.
+    Fokus utama project ini adalah <strong>visualisasi status bot</strong>,
+    <strong>risk awareness</strong>, dan <strong>clean UI</strong>.
+  </p>
 
-    <div class="warning">
-      Penting: Gunakan <strong>API Key</strong> tanpa akses <strong>withdraw</strong>. 
-      Jangan pernah memberikan kunci API yang bisa menarik dana.
-    </div>
+  <div>
+    <span class="badge">HTML</span>
+    <span class="badge">CSS</span>
+    <span class="badge">JavaScript</span>
+    <span class="badge">Trading System Design</span>
+  </div>
 
-    <div class="info">
-      ⚠️ Trading memiliki risiko kerugian. Gunakan <strong>SL/TP</strong> atau <strong>Trailing Stop</strong> untuk membatasi kerugian dan mengamankan profit.
-    </div>
+  <div class="note">
+    ⚠️ Project ini menggunakan <strong>data simulasi</strong>.
+    Backend dan trading logic tidak dipublikasikan demi alasan keamanan.
+  </div>
 
-    <canvas id="tradingChart" height="200"></canvas>
+  <h2>System Concept</h2>
+  <p>
+    Bot dirancang untuk bekerja tanpa intervensi emosi dengan pendekatan:
+  </p>
+  <ul>
+    <li>Rule-based execution</li>
+    <li>Stop Loss & Trailing Stop</li>
+    <li>Position state tracking</li>
+    <li>Risk-first design</li>
+  </ul>
 
-    <div class="buttons">
-      <a href="/signup.html">Sign Up</a>
-      <a href="/login.html">Login</a>
-      <a href="/learn.html">Pelajari Cara Kerja Bot</a>
-    </div>
-  </main>
+  <canvas id="tradingChart" height="200"></canvas>
 
-  <script>
-    const ctx = document.getElementById('tradingChart').getContext('2d');
-    const tradingChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: Array.from({length: 20}, (_, i) => i+1),
-        datasets: [{
-          label: 'Harga Asset',
-          data: Array.from({length: 20}, () => Math.floor(Math.random()*100 + 50)),
-          borderColor: '#44bd32',
-          backgroundColor: 'rgba(68, 189, 50, 0.2)',
-          tension: 0.4,
-          fill: true,
-          pointRadius: 3
-        }]
+  <div class="buttons">
+    <a href="starbot.html">View Dashboard Demo</a>
+    <a href="learn.html">System Explanation</a>
+    <a href="login.html">UI Login Demo</a>
+  </div>
+</main>
+
+<footer>
+  © 2025 Bayu — Portfolio Demonstration Only
+</footer>
+
+<script>
+  const ctx = document.getElementById("tradingChart").getContext("2d");
+
+  const tradingChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: Array.from({ length: 20 }, (_, i) => i + 1),
+      datasets: [{
+        label: "Simulated Price",
+        data: Array.from({ length: 20 }, () => Math.random() * 100 + 100),
+        borderColor: "#273c75",
+        backgroundColor: "rgba(39, 60, 117, 0.15)",
+        tension: 0.35,
+        fill: true,
+        pointRadius: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
       },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: false },
-          tooltip: { enabled: true }
-        },
-        scales: {
-          x: { display: true, title: { display: true, text: 'Waktu' } },
-          y: { display: true, title: { display: true, text: 'Harga' } }
-        }
+      scales: {
+        x: { display: false },
+        y: { display: true }
       }
-    });
+    }
+  });
 
-    // Animasi update chart setiap 2 detik
-    setInterval(() => {
-      tradingChart.data.datasets[0].data.push(Math.floor(Math.random()*100 + 50));
-      tradingChart.data.datasets[0].data.shift();
-      tradingChart.update();
-    }, 2000);
-  </script>
+  setInterval(() => {
+    tradingChart.data.datasets[0].data.push(Math.random() * 100 + 100);
+    tradingChart.data.datasets[0].data.shift();
+    tradingChart.update();
+  }, 2000);
+</script>
 
 </body>
 </html>
